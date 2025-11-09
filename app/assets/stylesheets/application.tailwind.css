@@ -12,6 +12,18 @@
   .sidebar-brand {
     border-bottom: none !important;
   }
+  .nav-item.active, .nav-item:hover {
+    background-color: #90040a !important;
+  }
+  body.sidebar-collapse .sidebar-brand .brand-text {
+    display: none !important;
+  }
+  body.sidebar-collapse .app-sidebar:hover {
+    width: 250px !important;
+  }
+  body.sidebar-collapse .app-sidebar:hover .brand-text {
+    display: inline !important;
+  }
 }
 
 /*

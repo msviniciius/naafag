@@ -28,12 +28,17 @@
       crossorigin="anonymous">
 
     <!-- Scripts do AdminLTE -->
+    <script>
+      var AdminLTEOptions = {
+        sidebarExpandOnHover: true,
+      };
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/4.0.0-beta1/js/adminlte.min.js"
       integrity="sha512-cdFutZXfLv4+h80CCqQN/3CRQ1hqNphfwiKK9aqwfjv0GNQBaDuKK/jGJ5RCeFwreNbejybsTKU/dzqDTDxNJw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
 
-  <body class="layout-fixed sidebar-expand-lg bg-gray-100">
+  <body class="layout-fixed sidebar-expand-lg bg-gray-100 sidebar-mini">
     <div class="app-wrapper">
       <%= render 'layouts/header' %>
       <%= render 'layouts/sidebar' %>
