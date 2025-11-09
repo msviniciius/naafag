@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .bg-header-bg {
+    background-color: #90040a !important;
+  }
+  .bg-navbar-bg {
+    background-color: #343a40 !important;
+  }
+  .sidebar-brand {
+    border-bottom: none !important;
+  }
+}
+
 /*
 
 @layer components {
