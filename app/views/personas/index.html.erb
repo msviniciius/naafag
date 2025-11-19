@@ -1,0 +1,54 @@
+<% content_for :title, "Personas" %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-md bg-green-50" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="text-4xl font-bold">Personas</h1>
+    <%= link_to "New persona", new_persona_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+  </div>
+
+  <% if @personas.any? %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="bg-gray-100">
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Document</th>
+            <th class="text-center" style="width: 220px;">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @personas.each do |persona| %>
+            <tr>
+              <td><%= persona.id %></td>
+              <td><%= persona.name %></td>
+              <td><%= persona.email %></td>
+              <td><%= persona.document %></td>
+
+              <td class="text-center">
+                <%= link_to "Show", persona, class: "btn btn-default btn-sm" %>
+                <%= link_to "Edit", edit_persona_path(persona), class: "btn btn-warning btn-sm mx-1" %>
+                <%= button_to "Destroy",
+                      persona,
+                      method: :delete,
+                      form: { class: "inline-block" },
+                      data: { turbo_confirm: "Are you sure?" },
+                      class: "btn btn-danger btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  <% else %>
+    <%= link_to "New", new_persona_path, class: "btn btn-warning btn-sm mx-1" %>
+    <p class="my-10 text-center">No personas found.</p>
+  <% end %>
+</div>

@@ -1,0 +1,71 @@
+<%= form_with(model: persona, class: "contents") do |form| %>
+
+  <% if persona.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(persona.errors.count, "error") %> impediram o salvamento:</h4>
+      <ul>
+        <% persona.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="mb-3 col-md-4">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-md-4">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-md-4">
+      <%= form.label :document, "Documento" %>
+      <%= form.text_field :document, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="mb-3 col-md-6">
+      <%= form.label :age %>
+      <%= form.number_field :age, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :occupation, "Ocupação" %>
+      <%= form.text_field :occupation, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="mb-3 col-md-6">
+      <%= form.label :rg, "RG" %>
+      <%= form.text_field :rg, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :organ_sender, "Órgão Emissor" %>
+      <%= form.text_field :organ_sender, class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="mb-3 col-md-6">
+      <%= form.label :cpf, "CPF" %>
+      <%= form.text_field :cpf, class: "form-control" %>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <%= form.label :birthdate, "Data de Nascimento" %>
+      <%= form.date_field :birthdate, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit "Salvar", class: "btn btn-primary px-4 py-2" %>
+  </div>
+
+<% end %>
